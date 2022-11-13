@@ -31,7 +31,6 @@ const data = computed(() => {
       <thead>
         <tr>
           <th>Phrase</th>
-          <th>Asked times</th>
           <th>Percentage</th>
         </tr>
       </thead>
@@ -49,7 +48,6 @@ const data = computed(() => {
             {{ question.translations.en }}
             <span v-if="question.stats.total === 0" class="new-tag">New</span>
           </td>
-          <td>{{ question.stats.total }}</td>
           <td>{{ question.stats.correctPercentage }}%</td>
         </tr>
       </tbody>

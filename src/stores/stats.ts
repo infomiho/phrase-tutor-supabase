@@ -7,8 +7,7 @@ export type QuestionStats = Record<
 >;
 
 export const useStatsStore = defineStore("stats", () => {
-  const stats = reactive<QuestionStats>({});
-  const summary = ref({ total: 0, correctPercentage: 0 });
+  const stats = reactive<QuestionStats>(loadStats());
 
   function addStats(questionId: number, isCorrect: boolean) {
     const question = stats[questionId];
@@ -26,8 +25,10 @@ export const useStatsStore = defineStore("stats", () => {
         incorrect: isCorrect ? 0 : 1,
       };
     }
-    summary.value = calculateSummary(stats);
+    saveStats(stats);
   }
+
+  const summary = computed(() => calculateSummary(stats));
 
   return { stats, addStats, summary };
 });
@@ -49,4 +50,16 @@ function calculateSummary(stats: QuestionStats) {
         ? Math.floor((summary.correct / summary.total) * 10000) / 100
         : 0,
   };
+}
+
+function saveStats(stats: QuestionStats) {
+  localStorage.setItem("stats", JSON.stringify(stats));
+}
+
+function loadStats() {
+  const stats = localStorage.getItem("stats");
+  if (stats) {
+    return JSON.parse(stats);
+  }
+  return {};
 }
