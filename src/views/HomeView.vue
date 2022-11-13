@@ -26,7 +26,7 @@ function nextQuestion() {
 }
 function markAnswer(isCorrect: boolean) {
   if (!isActive.value) return;
-  if (isCorrect && Math.random() < 0.5) {
+  if (isCorrect && Math.random() < 0.1) {
     jsConfetti.addConfetti();
   }
   store.addStats(question.value.id, isCorrect);
