@@ -4,10 +4,8 @@ import Italian from "@/phrases/italian.json";
 import { useStatsStore } from "@/stores/stats";
 import { getRandomQuestion } from "@/utilities/question";
 import { ref } from "vue";
-import JSConfetti from "js-confetti";
 import { useGeneralStore } from "@/stores/general";
-
-const jsConfetti = new JSConfetti();
+import { showConfetti } from "@/utilities/confetti";
 
 const store = useStatsStore();
 const generalStore = useGeneralStore();
@@ -27,7 +25,7 @@ function nextQuestion() {
 function markAnswer(isCorrect: boolean) {
   if (!isActive.value) return;
   if (isCorrect && Math.random() < 0.1) {
-    jsConfetti.addConfetti();
+    showConfetti();
   }
   store.addStats(question.value.id, isCorrect);
   isActive.value = false;

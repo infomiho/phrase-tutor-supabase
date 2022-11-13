@@ -30,7 +30,19 @@ export const useStatsStore = defineStore("stats", () => {
 
   const summary = computed(() => calculateSummary(stats));
 
-  return { stats, addStats, summary };
+  function clearStats() {
+    Object.keys(stats).forEach((key) => {
+      const id = parseInt(key, 10);
+      stats[id] = {
+        total: 0,
+        correct: 0,
+        incorrect: 0,
+      };
+    });
+    saveStats(stats);
+  }
+
+  return { stats, addStats, summary, clearStats };
 });
 
 function calculateSummary(stats: QuestionStats) {

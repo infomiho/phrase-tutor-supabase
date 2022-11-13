@@ -5,17 +5,12 @@ export function getRandomQuestion(
   questions: Question[],
   stats: QuestionStats
 ): Question | null {
-  // Do roulette wheel selection
-  // Based on following score formula:
-  // score = (incorrect / total) * 100 + 1
-  // score = 100 if total = 0
-
-  // Assign score to each question
   const questionsWithScore = questions.map((question) => {
     const questionStats = stats[question.id];
-    const score = questionStats
-      ? (questionStats.incorrect / questionStats.total) * 100 + 1
-      : 200;
+    const score =
+      questionStats && questionStats.total > 0
+        ? (questionStats.incorrect / questionStats.total) * 100 + 1
+        : 200;
     return { question, score };
   });
 
