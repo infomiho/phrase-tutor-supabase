@@ -57,7 +57,7 @@ function next() {
       I knew it
     </button>
     <button @click="incorrect" class="button incorrect" :disabled="!isActive">
-      I forgot
+      Nope
     </button>
     <div v-if="isAnswerVisible" class="question-box__answer">
       {{ question.translations[answerLang] }}

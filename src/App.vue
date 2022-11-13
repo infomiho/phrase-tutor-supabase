@@ -35,8 +35,7 @@ const summary = computed(() => store.summary);
     </p>
     <p>
       <strong>Quick tutorial:</strong> when you see a phrase, try to remember
-      the translation. If you know it, hit "I knew it", otherwise hit "I
-      forgot".
+      the translation. If you know it, hit "I knew it", otherwise hit "Nope".
     </p>
     <div>
       <button @click="generalStore.dismissIntro" class="dismiss">Got it</button>
