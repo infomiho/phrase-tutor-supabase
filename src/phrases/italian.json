@@ -1,0 +1,770 @@
+[
+    {
+        "id": 1,
+        "group": "general",
+        "translations": {
+            "en": "Yes",
+            "it": "Si"
+        }
+    },
+    {
+        "id": 2,
+        "group": "general",
+        "translations": {
+            "en": "No",
+            "it": "No"
+        }
+    },
+    {
+        "id": 3,
+        "group": "general",
+        "translations": {
+            "en": "Please",
+            "it": "Per favore"
+        }
+    },
+    {
+        "id": 4,
+        "group": "general",
+        "translations": {
+            "en": "Thank you",
+            "it": "Grazie"
+        }
+    },
+    {
+        "id": 5,
+        "group": "general",
+        "translations": {
+            "en": "You're welcome",
+            "it": "Prego"
+        }
+    },
+    {
+        "id": 6,
+        "group": "general",
+        "translations": {
+            "en": "Cheers! (To your health)",
+            "it": "Salute!"
+        }
+    },
+    {
+        "id": 7,
+        "group": "general",
+        "translations": {
+            "en": "Excuse me (for attention)",
+            "it": "Scusi"
+        }
+    },
+    {
+        "id": 8,
+        "group": "general",
+        "translations": {
+            "en": "Excuse me (to pass by)",
+            "it": "Permesso"
+        }
+    },
+    {
+        "id": 9,
+        "group": "general",
+        "translations": {
+            "en": "Do you speak English?",
+            "it": "Parla Inglese?"
+        }
+    },
+    {
+        "id": 10,
+        "group": "general",
+        "translations": {
+            "en": "I don't understand",
+            "it": "Non capisco"
+        }
+    },
+    {
+        "id": 11,
+        "group": "general",
+        "translations": {
+            "en": "I'm sorry",
+            "it": "Mi dispiace"
+        }
+    },
+    {
+        "id": 12,
+        "group": "greetings",
+        "translations": {
+            "en": "Good morning (formal)",
+            "it": "Buon giorno"
+        }
+    },
+    {
+        "id": 13,
+        "group": "greetings",
+        "translations": {
+            "en": "Good afternoon (formal)",
+            "it": "Buona sera"
+        }
+    },
+    {
+        "id": 14,
+        "group": "greetings",
+        "translations": {
+            "en": "Good night (formal)",
+            "it": "Buona notte"
+        }
+    },
+    {
+        "id": 15,
+        "group": "greetings",
+        "translations": {
+            "en": "Hi / Bye (informal)",
+            "it": "Ciao!"
+        }
+    },
+    {
+        "id": 16,
+        "group": "greetings",
+        "translations": {
+            "en": "Good bye (formal)",
+            "it": "Arrivederci"
+        }
+    },
+    {
+        "id": 17,
+        "group": "general",
+        "translations": {
+            "en": "My name is \u2026",
+            "it": "Mi chiamo"
+        }
+    },
+    {
+        "id": 18,
+        "group": "general",
+        "translations": {
+            "en": "What is your name?",
+            "it": "Come si chiama?"
+        }
+    },
+    {
+        "id": 19,
+        "group": "general",
+        "translations": {
+            "en": "Pleased to meet you",
+            "it": "Piacere"
+        }
+    },
+    {
+        "id": 20,
+        "group": "general",
+        "translations": {
+            "en": "How are you? (formal)",
+            "it": "Come sta?"
+        }
+    },
+    {
+        "id": 21,
+        "group": "general",
+        "translations": {
+            "en": "Good thank you",
+            "it": "Bene grazie"
+        }
+    },
+    {
+        "id": 22,
+        "group": "numbers",
+        "translations": {
+            "en": "One",
+            "it": "Uno"
+        }
+    },
+    {
+        "id": 23,
+        "group": "numbers",
+        "translations": {
+            "en": "Two",
+            "it": "Due"
+        }
+    },
+    {
+        "id": 24,
+        "group": "numbers",
+        "translations": {
+            "en": "Three",
+            "it": "Tre"
+        }
+    },
+    {
+        "id": 25,
+        "group": "numbers",
+        "translations": {
+            "en": "Four",
+            "it": "Quattro"
+        }
+    },
+    {
+        "id": 26,
+        "group": "numbers",
+        "translations": {
+            "en": "Five",
+            "it": "Cinque"
+        }
+    },
+    {
+        "id": 27,
+        "group": "numbers",
+        "translations": {
+            "en": "Six",
+            "it": "Sei"
+        }
+    },
+    {
+        "id": 28,
+        "group": "numbers",
+        "translations": {
+            "en": "Seven",
+            "it": "Sette"
+        }
+    },
+    {
+        "id": 29,
+        "group": "numbers",
+        "translations": {
+            "en": "Eight",
+            "it": "Otto"
+        }
+    },
+    {
+        "id": 30,
+        "group": "numbers",
+        "translations": {
+            "en": "Nine",
+            "it": "Nove"
+        }
+    },
+    {
+        "id": 31,
+        "group": "numbers",
+        "translations": {
+            "en": "Ten",
+            "it": "Dieci"
+        }
+    },
+    {
+        "id": 32,
+        "group": "numbers",
+        "translations": {
+            "en": "Eleven",
+            "it": "Undici"
+        }
+    },
+    {
+        "id": 33,
+        "group": "numbers",
+        "translations": {
+            "en": "Twelve",
+            "it": "Dodici"
+        }
+    },
+    {
+        "id": 34,
+        "group": "general",
+        "translations": {
+            "en": "In the morning",
+            "it": "Di Mattina"
+        }
+    },
+    {
+        "id": 35,
+        "group": "general",
+        "translations": {
+            "en": "In the afternoon",
+            "it": "Di pomeriggio"
+        }
+    },
+    {
+        "id": 36,
+        "group": "general",
+        "translations": {
+            "en": "In the evening",
+            "it": "Di Sera"
+        }
+    },
+    {
+        "id": 37,
+        "group": "general",
+        "translations": {
+            "en": "Noon",
+            "it": "Mezzogiorno"
+        }
+    },
+    {
+        "id": 38,
+        "group": "general",
+        "translations": {
+            "en": "At what time?",
+            "it": "A che ora?"
+        }
+    },
+    {
+        "id": 39,
+        "group": "general",
+        "translations": {
+            "en": "Nine o'clock in the morning",
+            "it": "Le nove"
+        }
+    },
+    {
+        "id": 40,
+        "group": "general",
+        "translations": {
+            "en": "Eight o'clock in the evening",
+            "it": "Le otto di sera /"
+        }
+    },
+    {
+        "id": 41,
+        "group": "days",
+        "translations": {
+            "en": "Monday",
+            "it": "Luned\u00ec"
+        }
+    },
+    {
+        "id": 42,
+        "group": "days",
+        "translations": {
+            "en": "Tuesday",
+            "it": "Marted\u00ec"
+        }
+    },
+    {
+        "id": 43,
+        "group": "days",
+        "translations": {
+            "en": "Wednesday",
+            "it": "Mercoled\u00ec"
+        }
+    },
+    {
+        "id": 44,
+        "group": "days",
+        "translations": {
+            "en": "Thursday",
+            "it": "Gioved\u00ec"
+        }
+    },
+    {
+        "id": 45,
+        "group": "days",
+        "translations": {
+            "en": "Friday",
+            "it": "Venerd\u00ec"
+        }
+    },
+    {
+        "id": 46,
+        "group": "days",
+        "translations": {
+            "en": "Saturday",
+            "it": "Sabato"
+        }
+    },
+    {
+        "id": 47,
+        "group": "days",
+        "translations": {
+            "en": "Sunday",
+            "it": "Domenica"
+        }
+    },
+    {
+        "id": 48,
+        "group": "days",
+        "translations": {
+            "en": "Today",
+            "it": "Oggi"
+        }
+    },
+    {
+        "id": 49,
+        "group": "days",
+        "translations": {
+            "en": "Yesterday",
+            "it": "Ieri"
+        }
+    },
+    {
+        "id": 50,
+        "group": "days",
+        "translations": {
+            "en": "Tomorrow",
+            "it": "Domani"
+        }
+    },
+    {
+        "id": 51,
+        "group": "general",
+        "translations": {
+            "en": "Can I see the menu please?",
+            "it": "Il menu, per favore"
+        }
+    },
+    {
+        "id": 52,
+        "group": "general",
+        "translations": {
+            "en": "What do you recommend?",
+            "it": "Che cosa ci consiglia?"
+        }
+    },
+    {
+        "id": 53,
+        "group": "general",
+        "translations": {
+            "en": "I'm allergic to\u2026",
+            "it": "Sono allergica/o a..."
+        }
+    },
+    {
+        "id": 54,
+        "group": "general",
+        "translations": {
+            "en": "Gluten / Dairy / Fish",
+            "it": "Glutine / Lattecini / Pesce"
+        }
+    },
+    {
+        "id": 55,
+        "group": "general",
+        "translations": {
+            "en": "House wine",
+            "it": "Vino della casa"
+        }
+    },
+    {
+        "id": 56,
+        "group": "general",
+        "translations": {
+            "en": "Red / white wine",
+            "it": "Vino rosso / bianco"
+        }
+    },
+    {
+        "id": 57,
+        "group": "general",
+        "translations": {
+            "en": "A glass / bottle",
+            "it": "Una bicchiere / una bottiglia"
+        }
+    },
+    {
+        "id": 58,
+        "group": "general",
+        "translations": {
+            "en": "Appetizer",
+            "it": "Antipasto"
+        }
+    },
+    {
+        "id": 59,
+        "group": "general",
+        "translations": {
+            "en": "First course",
+            "it": "Primo"
+        }
+    },
+    {
+        "id": 60,
+        "group": "general",
+        "translations": {
+            "en": "Second course",
+            "it": "Secondo"
+        }
+    },
+    {
+        "id": 61,
+        "group": "general",
+        "translations": {
+            "en": "Dessert",
+            "it": "Dolci"
+        }
+    },
+    {
+        "id": 62,
+        "group": "general",
+        "translations": {
+            "en": "Two flavors please",
+            "it": "Due gusti, per favore"
+        }
+    },
+    {
+        "id": 63,
+        "group": "general",
+        "translations": {
+            "en": "Where's the bathroom?",
+            "it": "Dov'\u00e8 il bagno?"
+        }
+    },
+    {
+        "id": 64,
+        "group": "general",
+        "translations": {
+            "en": "The check (bill) please",
+            "it": "Il conto, per favore"
+        }
+    },
+    {
+        "id": 65,
+        "group": "general",
+        "translations": {
+            "en": "Can I pay by card?",
+            "it": "Posso pagare con la carta?"
+        }
+    },
+    {
+        "id": 66,
+        "group": "general",
+        "translations": {
+            "en": "When does it open / close?",
+            "it": "Quando si apri / chiude?"
+        }
+    },
+    {
+        "id": 67,
+        "group": "general",
+        "translations": {
+            "en": "Two adults / one child",
+            "it": "Due adulti / un bambino"
+        }
+    },
+    {
+        "id": 68,
+        "group": "general",
+        "translations": {
+            "en": "One / two ticket/s",
+            "it": "Un / due biglietto/i"
+        }
+    },
+    {
+        "id": 69,
+        "group": "general",
+        "translations": {
+            "en": "One senior",
+            "it": "Un pensionato"
+        }
+    },
+    {
+        "id": 70,
+        "group": "general",
+        "translations": {
+            "en": "One student",
+            "it": "Uno studente"
+        }
+    },
+    {
+        "id": 71,
+        "group": "general",
+        "translations": {
+            "en": "Where is the bag store / cloak room?",
+            "it": "Dov'\u00e8 la guardaroba?"
+        }
+    },
+    {
+        "id": 72,
+        "group": "general",
+        "translations": {
+            "en": "Where is\u2026 ?",
+            "it": "Dov'\u00e8\u2026?"
+        }
+    },
+    {
+        "id": 73,
+        "group": "general",
+        "translations": {
+            "en": "Entrance",
+            "it": "Entrata"
+        }
+    },
+    {
+        "id": 74,
+        "group": "general",
+        "translations": {
+            "en": "Exit",
+            "it": "Uscita"
+        }
+    },
+    {
+        "id": 75,
+        "group": "general",
+        "translations": {
+            "en": "Left",
+            "it": "Sinistra"
+        }
+    },
+    {
+        "id": 76,
+        "group": "general",
+        "translations": {
+            "en": "Right",
+            "it": "Destra"
+        }
+    },
+    {
+        "id": 77,
+        "group": "general",
+        "translations": {
+            "en": "Straight ahead",
+            "it": "Dritto"
+        }
+    },
+    {
+        "id": 78,
+        "group": "general",
+        "translations": {
+            "en": "Forward",
+            "it": "Avanti"
+        }
+    },
+    {
+        "id": 79,
+        "group": "general",
+        "translations": {
+            "en": "Back",
+            "it": "Dietro"
+        }
+    },
+    {
+        "id": 80,
+        "group": "general",
+        "translations": {
+            "en": "Where is the train station?",
+            "it": "Dov'\u00e8 la stazione?"
+        }
+    },
+    {
+        "id": 81,
+        "group": "general",
+        "translations": {
+            "en": "Where is the bus stop?",
+            "it": "Dov'\u00e8 la fermata"
+        }
+    },
+    {
+        "id": 82,
+        "group": "general",
+        "translations": {
+            "en": "One / two ticket/s",
+            "it": "Un / due biglietto/i"
+        }
+    },
+    {
+        "id": 83,
+        "group": "general",
+        "translations": {
+            "en": "One way",
+            "it": "Andata"
+        }
+    },
+    {
+        "id": 84,
+        "group": "general",
+        "translations": {
+            "en": "Return",
+            "it": "Ritorno"
+        }
+    },
+    {
+        "id": 85,
+        "group": "general",
+        "translations": {
+            "en": "What platform for Rome?",
+            "it": "Da quale binario per Roma?"
+        }
+    },
+    {
+        "id": 86,
+        "group": "general",
+        "translations": {
+            "en": "Newstand (for bus tickets)",
+            "it": "Tabacchi"
+        }
+    },
+    {
+        "id": 87,
+        "group": "general",
+        "translations": {
+            "en": "I would like\u2026",
+            "it": "Vorrei\u2026"
+        }
+    },
+    {
+        "id": 88,
+        "group": "general",
+        "translations": {
+            "en": "How much is this?",
+            "it": "Quanto costa questo?"
+        }
+    },
+    {
+        "id": 89,
+        "group": "general",
+        "translations": {
+            "en": "OK I'll take it",
+            "it": "Va bene, lo prendo"
+        }
+    },
+    {
+        "id": 90,
+        "group": "general",
+        "translations": {
+            "en": "I don't want it",
+            "it": "Non lo voglio"
+        }
+    },
+    {
+        "id": 91,
+        "group": "general",
+        "translations": {
+            "en": "Can you ship to\u2026?",
+            "it": "Puoi spedire a?"
+        }
+    },
+    {
+        "id": 92,
+        "group": "general",
+        "translations": {
+            "en": "Help!",
+            "it": "Aiuto!"
+        }
+    },
+    {
+        "id": 93,
+        "group": "general",
+        "translations": {
+            "en": "I need a doctor",
+            "it": "Ho bisogno di un dottore"
+        }
+    },
+    {
+        "id": 94,
+        "group": "general",
+        "translations": {
+            "en": "Call the police",
+            "it": "Chiami la polizia"
+        }
+    },
+    {
+        "id": 95,
+        "group": "general",
+        "translations": {
+            "en": "Look out!",
+            "it": "Attento!"
+        }
+    },
+    {
+        "id": 96,
+        "group": "general",
+        "translations": {
+            "en": "Go away!",
+            "it": "Vai via!"
+        }
+    }
+]
