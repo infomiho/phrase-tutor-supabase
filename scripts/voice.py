@@ -46,12 +46,13 @@ def get_audio(text):
     response = requests.post(url, headers=headers, data=body)
     return response.content
 
+ext = "mpeg"
+
 def download_pronunciation(phraseId, text):
     audio = get_audio(text)
     folder = "../src/assets/audio/"
 
-    # Write to folder/{text}.mpeg
-    with open(f"{folder}{phraseId}.mpeg", "wb") as f:
+    with open(f"{folder}{phraseId}.{ext}", "wb") as f:
         f.write(audio)
 
 # Load phrases from ../src/phrases/italian.json
@@ -59,8 +60,7 @@ def download_pronunciation(phraseId, text):
 with open("../src/phrases/italian.json", "r") as f:
     phrases = json.load(f)
     for phrase in phrases:
-        # if "../src/assets/audio/id.mpeg" exists, skip
-        if os.path.exists(f"../src/assets/audio/{phrase['id']}.mpeg"):
+        if os.path.exists(f"../src/assets/audio/{phrase['id']}.{ext}"):
             print(f'Skipping {phrase["translations"]["it"]}')
             continue
         print(f'Downloading {phrase["translations"]["it"]}')

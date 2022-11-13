@@ -14,7 +14,7 @@ const props = defineProps({
 });
 
 const audioURL = computed(
-  () => new URL(`../assets/it/${props.question.id}.mpeg`, import.meta.url).href
+  () => new URL(`../assets/it/${props.question.id}.mp3`, import.meta.url).href
 );
 
 const onMobileSafari = computed(() => {
