@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Question } from "@/models/question";
-import type { PropType } from "vue";
+import { computed, type PropType } from "vue";
 
 const props = defineProps({
   question: {
@@ -13,18 +13,26 @@ const props = defineProps({
   },
 });
 
+const audioURL = computed(
+  () => new URL(`../assets/it/${props.question.id}.mpeg`, import.meta.url).href
+);
+
+const onMobileSafari = computed(() => {
+  const ua = navigator.userAgent;
+  return ua.includes("iPhone") || ua.includes("iPad") || ua.includes("iPod");
+});
+
 function say() {
-  const audioURL = new URL(
-    `../assets/it/${props.question.id}.mpeg`,
-    import.meta.url
-  ).href;
-  const audio = new Audio(audioURL);
+  const audio = new Audio(audioURL.value);
   audio.play();
 }
 </script>
 
 <template>
-  <button @click="say" class="play" v-if="lang === 'it'"></button>
+  <template v-if="lang === 'it'">
+    <audio v-if="onMobileSafari" :src="audioURL" controls></audio>
+    <button v-else @click="say" class="play"></button>
+  </template>
 </template>
 
 <style scoped>
