@@ -9,7 +9,7 @@ const generalStore = useGeneralStore();
 const summary = computed(() => store.summary);
 
 function unlockAudio() {
-  const audioURL = new URL(`../assets/it/1.mpeg`, import.meta.url).href;
+  const audioURL = new URL(`./assets/it/1.mpeg`, import.meta.url).href;
   const sound = new Audio(audioURL);
 
   sound.play();

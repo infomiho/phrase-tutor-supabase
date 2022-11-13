@@ -30,6 +30,7 @@ function say() {
 
 <template>
   <template v-if="lang === 'it'">
+    {{ audioURL }}
     <audio v-if="onMobileSafari" :src="audioURL" controls></audio>
     <button v-else @click="say" class="play"></button>
   </template>
