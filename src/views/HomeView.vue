@@ -35,25 +35,38 @@ function switchLanguages() {
 
 <template>
   <main class="home">
-    <h1>
-      Learn
-      <button @click="switchLanguages">
-        {{ nameToFlagEmoji[questionLang] }} to {{ nameToFlagEmoji[answerLang] }}
-      </button>
-    </h1>
-    <QuestionBox
-      :question="question"
-      :questionLang="questionLang"
-      :answerLang="answerLang"
-      :isActive="isActive"
-      @next="nextQuestion"
-      @correct="markAnswer(true)"
-      @incorrect="markAnswer(false)"
-    />
+    <div class="content">
+      <h1>
+        Learn
+        <button @click="switchLanguages">
+          {{ nameToFlagEmoji[questionLang] }} to
+          {{ nameToFlagEmoji[answerLang] }}
+        </button>
+      </h1>
+      <QuestionBox
+        :question="question"
+        :questionLang="questionLang"
+        :answerLang="answerLang"
+        :isActive="isActive"
+        @next="nextQuestion"
+        @correct="markAnswer(true)"
+        @incorrect="markAnswer(false)"
+      />
+    </div>
   </main>
 </template>
 
 <style scoped>
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+.content {
+  flex: 1;
+  max-width: 800px;
+}
 h1 {
   margin-bottom: 1rem;
   font-size: 1.5rem;

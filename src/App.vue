@@ -33,12 +33,24 @@ const summary = computed(() => store.summary);
       the phrases you didn't know. Just keep hitting next until you are 100%
       correct 😊
     </p>
+    <p>
+      <strong>Quick tutorial:</strong> when you see a phrase, try to remember
+      the translation. If you know it, hit "I knew it", otherwise hit "I
+      forgot".
+    </p>
     <div>
       <button @click="generalStore.dismissIntro" class="dismiss">Got it</button>
     </div>
   </div>
 
   <RouterView />
+
+  <footer>
+    <p>
+      Made with ❤️ by
+      <a href="https://ilakovac.com" target="_blank">Miho</a>
+    </p>
+  </footer>
 </template>
 
 <style scoped>
@@ -75,7 +87,8 @@ h2 {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
+  max-width: 800px;
 }
 .intro p + p {
   margin-top: 1rem;
@@ -86,10 +99,17 @@ button.dismiss {
   border-radius: 4px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  margin-top: 1rem;
   cursor: pointer;
+  margin-top: 1rem;
 }
 button.dismiss:hover {
   background-color: #eee;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ccc;
+  text-align: center;
 }
 </style>
