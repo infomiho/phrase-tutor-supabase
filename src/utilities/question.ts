@@ -15,7 +15,7 @@ export function getRandomQuestion(
     const questionStats = stats[question.id];
     const score = questionStats
       ? (questionStats.incorrect / questionStats.total) * 100 + 1
-      : 100;
+      : 200;
     return { question, score };
   });
 
