@@ -4,13 +4,16 @@ import Italian from "@/phrases/italian.json";
 import { useStatsStore } from "@/stores/stats";
 import { getRandomQuestion } from "@/utilities/question";
 import { ref } from "vue";
+import JSConfetti from "js-confetti";
+import { useGeneralStore } from "@/stores/general";
+
+const jsConfetti = new JSConfetti();
 
 const store = useStatsStore();
+const generalStore = useGeneralStore();
 
 const question = ref(getRandomQuestion(Italian, store.stats)!);
 const isActive = ref(true);
-const questionLang = ref<keyof typeof nameToFlagEmoji>("it");
-const answerLang = ref<keyof typeof nameToFlagEmoji>("en");
 
 const nameToFlagEmoji = {
   it: "🇮🇹",
@@ -23,13 +26,11 @@ function nextQuestion() {
 }
 function markAnswer(isCorrect: boolean) {
   if (!isActive.value) return;
+  if (isCorrect && Math.random() < 0.5) {
+    jsConfetti.addConfetti();
+  }
   store.addStats(question.value.id, isCorrect);
   isActive.value = false;
-}
-function switchLanguages() {
-  const temp = questionLang.value;
-  questionLang.value = answerLang.value;
-  answerLang.value = temp;
 }
 </script>
 
@@ -38,15 +39,15 @@ function switchLanguages() {
     <div class="content">
       <h1>
         Learn
-        <button @click="switchLanguages">
-          {{ nameToFlagEmoji[questionLang] }} to
-          {{ nameToFlagEmoji[answerLang] }}
+        <button @click="generalStore.switchLanguage">
+          {{ nameToFlagEmoji[generalStore.questionLang] }} to
+          {{ nameToFlagEmoji[generalStore.answerLang] }}
         </button>
       </h1>
       <QuestionBox
         :question="question"
-        :questionLang="questionLang"
-        :answerLang="answerLang"
+        :questionLang="generalStore.questionLang"
+        :answerLang="generalStore.answerLang"
         :isActive="isActive"
         @next="nextQuestion"
         @correct="markAnswer(true)"

@@ -31,11 +31,11 @@ const emit = defineEmits(["correct", "incorrect", "next"]);
 
 function correct() {
   emit("correct");
-  showAnswer();
+  next();
 }
 function incorrect() {
   emit("incorrect");
-  showAnswer();
+  next();
 }
 
 function next() {
@@ -53,16 +53,18 @@ function next() {
         <!-- <button @click="say" class="play"><img :src="Sound" alt=""></button> -->
       </div>
     </div>
-    <button @click="correct" class="button correct" :disabled="!isActive">
-      I knew it
-    </button>
-    <button @click="incorrect" class="button incorrect" :disabled="!isActive">
-      Nope
-    </button>
-    <div v-if="isAnswerVisible" class="question-box__answer">
-      {{ question.translations[answerLang] }}
-    </div>
-    <button v-if="isAnswerVisible" @click="next" class="button">Next</button>
+    <button v-if="!isAnswerVisible" @click="showAnswer" class="button">Show answer</button>
+    <template v-if="isAnswerVisible">
+      <div v-if="isAnswerVisible" class="question-box__answer">
+        {{ question.translations[answerLang] }}
+      </div>
+      <button @click="correct" class="button correct" :disabled="!isActive">
+        I knew it
+      </button>
+      <button @click="incorrect" class="button incorrect" :disabled="!isActive">
+        Nope
+      </button>
+    </template>
   </div>
 </template>
 
