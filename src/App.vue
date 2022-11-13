@@ -7,6 +7,21 @@ import { useStatsStore } from "./stores/stats";
 const store = useStatsStore();
 const generalStore = useGeneralStore();
 const summary = computed(() => store.summary);
+
+function unlockAudio() {
+  const audioURL = new URL(`../assets/it/1.mpeg`, import.meta.url).href;
+  const sound = new Audio(audioURL);
+
+  sound.play();
+  sound.pause();
+  sound.currentTime = 0;
+
+  document.body.removeEventListener("click", unlockAudio);
+  document.body.removeEventListener("touchstart", unlockAudio);
+}
+
+document.body.addEventListener("click", unlockAudio);
+document.body.addEventListener("touchstart", unlockAudio);
 </script>
 
 <template>
@@ -77,10 +92,12 @@ h2 {
     align-items: center;
     padding: 1rem 0 2rem;
   }
+
   h2 {
     font-size: 1.5rem;
   }
 }
+
 .intro {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -89,9 +106,11 @@ h2 {
   margin: 0 auto 1rem;
   max-width: 800px;
 }
+
 .intro p + p {
   margin-top: 1rem;
 }
+
 button.dismiss {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -101,6 +120,7 @@ button.dismiss {
   cursor: pointer;
   margin-top: 1rem;
 }
+
 button.dismiss:hover {
   background-color: #eee;
 }

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Sound from "@/assets/sound.svg";
 import type { Question } from "@/models/question";
 import type { PropType } from "vue";
 
@@ -25,14 +24,16 @@ function say() {
 </script>
 
 <template>
-  <button @click="say" class="play" v-if="lang === 'it'">
-    <img :src="Sound" />
-  </button>
+  <button @click="say" class="play" v-if="lang === 'it'"></button>
 </template>
 
 <style scoped>
 .play {
   background-color: #fff;
+  background-image: url("../assets/sound.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
   border-radius: 50%;
   border: 1px solid #333;
   display: inline-flex;
@@ -42,6 +43,7 @@ function say() {
   height: 30px;
   width: 30px;
 }
+
 .play img {
   max-width: 100%;
 }
