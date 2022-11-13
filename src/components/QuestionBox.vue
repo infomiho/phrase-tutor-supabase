@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Question } from "@/models/question";
 import { ref, type PropType } from "vue";
-import Sound from "@/assets/sound.svg";
+import SayButton from "@/components/SayButton.vue";
 
 defineProps({
   question: {
@@ -42,6 +42,7 @@ function next() {
   isAnswerVisible.value = false;
   emit("next");
 }
+function say() {}
 </script>
 
 <template>
@@ -50,13 +51,18 @@ function next() {
       Please translate:
       <div class="question-box__foreign">
         {{ question.translations[questionLang] }}
-        <!-- <button @click="say" class="play"><img :src="Sound" alt=""></button> -->
+        <SayButton :question="question" :lang="questionLang" />
       </div>
     </div>
-    <button v-if="!isAnswerVisible" @click="showAnswer" class="button">Show answer</button>
+    <button v-if="!isAnswerVisible" @click="showAnswer" class="button">
+      Show answer
+    </button>
     <template v-if="isAnswerVisible">
       <div v-if="isAnswerVisible" class="question-box__answer">
-        {{ question.translations[answerLang] }}
+        <div class="question-box__answer__text">
+          {{ question.translations[answerLang] }}
+        </div>
+        <SayButton :question="question" :lang="answerLang" />
       </div>
       <button @click="correct" class="button correct" :disabled="!isActive">
         I knew it
@@ -86,6 +92,11 @@ function next() {
   border: 1px solid #333;
   padding: 1rem;
   margin: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+.question-box__answer__text {
+  margin-right: 0.5rem;
 }
 .button {
   background-color: #3c4048;
@@ -104,17 +115,6 @@ function next() {
 }
 .button + .button {
   margin-left: 0.5rem;
-}
-.play {
-  /* rounded play button */
-  background-color: #fff;
-  border-radius: 50%;
-  border: 1px solid #333;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0.2rem;
 }
 .button:disabled {
   opacity: 0.5;
