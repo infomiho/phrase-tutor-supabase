@@ -1,11 +1,14 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { RouterView, RouterLink } from "vue-router";
 import { useGeneralStore } from "./stores/general";
 import { useStatsStore } from "./stores/stats";
+import { usePhrasesStore } from "@/stores/phrases";
 
 const store = useStatsStore();
 const generalStore = useGeneralStore();
+const phrasesStore = usePhrasesStore();
+
 const summary = computed(() => store.summary);
 
 function unlockAudio() {
@@ -22,6 +25,10 @@ function unlockAudio() {
 
 document.body.addEventListener("click", unlockAudio);
 document.body.addEventListener("touchstart", unlockAudio);
+
+onMounted(() => {
+  phrasesStore.fetchPhrases();
+});
 </script>
 
 <template>

@@ -1,16 +1,20 @@
 <script setup lang="ts">
-import Italian from "@/phrases/italian.json";
 import { useStatsStore } from "@/stores/stats";
+import { usePhrasesStore } from "@/stores/phrases";
 import { computed, ref } from "vue";
 import { showConfetti } from "@/utilities/confetti";
 import type { Langauges } from "@/models/question";
+import ContentLoader from "@/components/ContentLoader.vue";
 
 const store = useStatsStore();
+const phrasesStore = usePhrasesStore();
+
+const questions = computed(() => phrasesStore.phrases);
 
 const lang = ref<Langauges>("en");
 
 const data = computed(() => {
-  return Italian.map((question) => {
+  return questions.value.map((question) => {
     const stats = store.stats[question.id];
     return {
       ...question,
@@ -50,7 +54,8 @@ function clearStats() {
       If you want to restart, you can
       <button class="a" @click="clearStats">delete your stats</button>.
     </p>
-    <table>
+    <ContentLoader v-if="phrasesStore.isLoading" />
+    <table v-else>
       <thead>
         <tr>
           <th>

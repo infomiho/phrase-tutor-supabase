@@ -5,7 +5,7 @@ import SayButton from "@/components/SayButton.vue";
 
 defineProps({
   question: {
-    type: Object as PropType<Question>,
+    type: Object as PropType<Question | null>,
     required: true,
   },
   questionLang: {
@@ -46,7 +46,7 @@ function say() {}
 </script>
 
 <template>
-  <div class="question-box">
+  <div class="question-box" v-if="question">
     <div class="question-box__question">
       Please translate:
       <div class="question-box__foreign">

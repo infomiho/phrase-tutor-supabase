@@ -1,17 +1,31 @@
 <script setup lang="ts">
 import QuestionBox from "@/components/QuestionBox.vue";
-import Italian from "@/phrases/italian.json";
+import ContentLoader from "@/components/ContentLoader.vue";
 import { useStatsStore } from "@/stores/stats";
 import { getRandomQuestion } from "@/utilities/question";
-import { ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useGeneralStore } from "@/stores/general";
 import { showConfetti } from "@/utilities/confetti";
+import { usePhrasesStore } from "@/stores/phrases";
+import type { Question } from "@/models/question";
 
 const store = useStatsStore();
 const generalStore = useGeneralStore();
+const phrasesStore = usePhrasesStore();
 
-const question = ref(getRandomQuestion(Italian, store.stats)!);
+const questions = computed(() => phrasesStore.phrases);
+const question = ref<Question | null>(null);
 const isActive = ref(true);
+
+watch(
+  questions,
+  (newQuestions) => {
+    if (newQuestions.length > 0 && question.value === null) {
+      question.value = getRandomQuestion(questions.value, store.stats)!;
+    }
+  },
+  { immediate: true }
+);
 
 const nameToFlagEmoji = {
   it: "🇮🇹",
@@ -19,10 +33,11 @@ const nameToFlagEmoji = {
 };
 
 function nextQuestion() {
-  question.value = getRandomQuestion(Italian, store.stats)!;
+  question.value = getRandomQuestion(questions.value, store.stats)!;
   isActive.value = true;
 }
 function markAnswer(isCorrect: boolean) {
+  if (!question.value) return;
   if (!isActive.value) return;
   if (isCorrect && Math.random() < 0.1) {
     showConfetti();
@@ -34,7 +49,8 @@ function markAnswer(isCorrect: boolean) {
 
 <template>
   <main class="home">
-    <div class="content">
+    <ContentLoader v-if="phrasesStore.isLoading" />
+    <div class="content" v-else>
       <h1>
         Learn
         <button @click="generalStore.switchLanguage">

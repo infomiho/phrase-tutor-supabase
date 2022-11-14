@@ -17,14 +17,14 @@ const audioURL = computed(
   () => new URL(`../assets/it/${props.question.id}.mp3`, import.meta.url).href
 );
 
-const onMobileSafari = computed(() => {
-  const ua = navigator.userAgent;
-  return ua.includes("iPhone") || ua.includes("iPad") || ua.includes("iPod");
-});
+const audio = computed(() => new Audio(audioURL.value));
 
 function say() {
-  const audio = new Audio(audioURL.value);
-  audio.play();
+  // If audio is playing, stop it and play it again
+  if (!audio.value.paused) {
+    audio.value.currentTime = 0;
+  }
+  audio.value.play();
 }
 </script>
 
