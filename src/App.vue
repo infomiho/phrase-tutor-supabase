@@ -173,6 +173,7 @@ footer {
 .user .profile {
   display: flex;
   align-items: center;
+  padding: 0.5rem;
   transition: all 0.2s ease-in-out;
 }
 
