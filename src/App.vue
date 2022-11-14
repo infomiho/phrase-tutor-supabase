@@ -4,6 +4,7 @@ import { RouterView, RouterLink } from "vue-router";
 import { useGeneralStore } from "./stores/general";
 import { useStatsStore } from "./stores/stats";
 import { usePhrasesStore } from "@/stores/phrases";
+import { getFullURL } from "./utilities/audio";
 
 const store = useStatsStore();
 const generalStore = useGeneralStore();
@@ -12,7 +13,7 @@ const phrasesStore = usePhrasesStore();
 const summary = computed(() => store.summary);
 
 function unlockAudio() {
-  const audioURL = new URL(`./assets/it/1.mp3`, import.meta.url).href;
+  const audioURL = getFullURL(1, "it");
   const sound = new Audio(audioURL);
 
   sound.play();

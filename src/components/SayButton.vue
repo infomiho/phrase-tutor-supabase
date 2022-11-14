@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Question } from "@/models/question";
-import { computed, type PropType } from "vue";
+import { getFullURL } from "@/utilities/audio";
+import { computed, ref, watch, type PropType } from "vue";
 
 const props = defineProps({
   question: {
@@ -13,9 +14,18 @@ const props = defineProps({
   },
 });
 
-const audioURL = computed(
-  () => new URL(`../assets/it/${props.question.id}.mp3`, import.meta.url).href
-);
+const isAudioURLValid = ref(true);
+const audioURL = computed(() => getFullURL(props.question.id, "it"));
+
+watch(audioURL, async (newURL) => {
+  isAudioURLValid.value = false;
+  try {
+    await fetch(newURL);
+    isAudioURLValid.value = true;
+  } catch (e) {
+    isAudioURLValid.value = false;
+  }
+});
 
 const audio = computed(() => new Audio(audioURL.value));
 
@@ -31,7 +41,11 @@ function say() {
 <template>
   <template v-if="lang === 'it'">
     <!-- <audio v-if="onMobileSafari" :src="audioURL" controls></audio> -->
-    <button @click="say" class="play"></button>
+    <button
+      @click="say"
+      :class="{ disabled: !isAudioURLValid }"
+      class="play"
+    ></button>
   </template>
 </template>
 
@@ -50,6 +64,11 @@ function say() {
   cursor: pointer;
   height: 30px;
   width: 30px;
+}
+
+.play.disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .play img {
